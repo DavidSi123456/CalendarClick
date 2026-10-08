@@ -4,6 +4,14 @@
 
 目前提供**简体中文版**，适用于 **macOS 14 及以上的 Apple Silicon Mac（M 系列芯片）**。
 
+## 操作演示
+
+右键日程，保留原菜单，在旁边点击“标记为已完成”，标题就会显示 `✓`。再次右键可以取消完成。
+
+![日历打勾中文操作演示：右键日程、标记完成并取消完成](docs/images/calendarclick-demo-zh-CN.gif)
+
+动图使用虚构日程模拟操作。
+
 ## 下载
 
 - **[下载安装包 DMG](https://github.com/DavidSi123456/CalendarClick/releases/download/v0.1.0/CalendarClick-v0.1.0-macOS-arm64-zh-CN.dmg)**
