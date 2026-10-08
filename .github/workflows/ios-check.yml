@@ -1,0 +1,26 @@
+name: iOS 编译与逻辑检查
+
+on:
+  push:
+    branches: [main]
+    paths: ['iOS/**', 'Sources/CompletionCore.swift', '.github/workflows/ios-check.yml']
+  pull_request:
+    paths: ['iOS/**', 'Sources/CompletionCore.swift', '.github/workflows/ios-check.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  ios:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: 核心与演示检查
+        run: ./iOS/check.sh
+      - name: 编译 iOS 模拟器应用
+        run: >-
+          xcodebuild -project iOS/CalendarClick.xcodeproj -scheme CalendarClick
+          -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'
+          -configuration Debug -derivedDataPath .build/iOSDerivedData
+          CODE_SIGNING_ALLOWED=NO build

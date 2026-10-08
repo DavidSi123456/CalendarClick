@@ -13,3 +13,7 @@ dist/
 .env.*
 __pycache__/
 *.py[cod]
+xcuserdata/
+*.xcuserstate
+DerivedData/
+*.ipa
