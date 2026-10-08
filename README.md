@@ -10,6 +10,8 @@
 - [下载 ZIP 压缩包](https://github.com/DavidSi123456/CalendarClick/releases/download/v0.1.0/CalendarClick-v0.1.0-macOS-arm64-zh-CN.zip)
 - [查看版本说明](https://github.com/DavidSi123456/CalendarClick/releases/latest)
 
+安装包也保存在仓库的 [releases/v0.1.0](releases/v0.1.0) 目录，可直接下载。
+
 ## 安装
 
 1. 打开 DMG，把 **日历打勾.app** 拖到 **应用程序**；使用 ZIP 时，先解压再移动应用。

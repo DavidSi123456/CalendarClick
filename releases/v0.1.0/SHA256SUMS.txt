@@ -1,0 +1,2 @@
+239b4b4a25d56efed227bc6fb3981fbf87551de5a91274f71b2d1cb428a60238  CalendarClick-v0.1.0-macOS-arm64-zh-CN.dmg
+767e294cfaaec985480111077a361e5d36ed651211e77a53bfad26a0364f6d7a  CalendarClick-v0.1.0-macOS-arm64-zh-CN.zip

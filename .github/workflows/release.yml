@@ -1,0 +1,37 @@
+name: 发布中文安装包
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 读取已推送的版本
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          git clone --depth 1 --branch "$GITHUB_REF_NAME" "https://github.com/${GITHUB_REPOSITORY}.git" package
+      - name: 校验并发布下载附件
+        working-directory: package
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          (cd "releases/$GITHUB_REF_NAME" && sha256sum --check SHA256SUMS.txt)
+          gh release create "$GITHUB_REF_NAME" \
+            "releases/$GITHUB_REF_NAME/CalendarClick-${GITHUB_REF_NAME}-macOS-arm64-zh-CN.dmg" \
+            "releases/$GITHUB_REF_NAME/CalendarClick-${GITHUB_REF_NAME}-macOS-arm64-zh-CN.zip" \
+            "releases/$GITHUB_REF_NAME/SHA256SUMS.txt" \
+            --repo "$GITHUB_REPOSITORY" \
+            --verify-tag \
+            --title "日历打勾 ${GITHUB_REF_NAME} · 中文版" \
+            --notes-file RELEASE_NOTES.md
