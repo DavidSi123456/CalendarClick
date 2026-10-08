@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleName</key><string>日历打勾</string>
+    <key>CFBundleDisplayName</key><string>日历打勾</string>
+    <key>CFBundleIdentifier</key><string>local.davidsi.CalendarCheck</string>
+    <key>CFBundleExecutable</key><string>CalendarCheck</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>0.1.0</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>LSUIElement</key><true/>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSPrincipalClass</key><string>NSApplication</string>
+    <key>NSCalendarsFullAccessUsageDescription</key><string>读取你右键的日程，并在你点击“完成”或“取消完成”时修改标题，让苹果日历显示打勾。</string>
+    <key>NSCalendarsUsageDescription</key><string>读取日程，并在你点击完成按钮时更新日程标题。</string>
+</dict></plist>
